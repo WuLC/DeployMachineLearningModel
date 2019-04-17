@@ -19,9 +19,9 @@ labels ={
 @app.route('/api',methods=['POST'])
 def predict():
     # Get the data from the POST request.
-	data = request.get_json(force=True)
-	predict = model.predict(data['feature'])
-	return jsonify(predict[0].tolist())
+    data = request.get_json(force=True)
+    predict = model.predict(data['feature'])
+    return jsonify(predict[0].tolist())
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
