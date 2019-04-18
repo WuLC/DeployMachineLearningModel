@@ -16,7 +16,7 @@ labels ={
   2: "virginica"
 }
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.20)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.25)
 classifier=tree.DecisionTreeClassifier()
 classifier.fit(x_train,y_train)
 predictions=classifier.predict(x_test)
