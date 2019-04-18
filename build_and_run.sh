@@ -12,4 +12,5 @@ else
     echo "empty container id"
 fi
 docker build -t deploy_ml_model .
+docker image rm -f $(docker images | grep \<none\> | awk -F ' ' '{print $3}')
 docker run -p 8000:5000 deploy_ml_model
