@@ -8,7 +8,7 @@ import subprocess
 
 app = Flask(__name__)
 
-@app.route('/github_hook', methods=['POST'])
+@app.route('/github_webhook', methods=['POST'])
 def rebuild():
     print('new commits to github repository')
     ## subprocess.run can just deal with the first change
@@ -18,4 +18,4 @@ def rebuild():
     return jsonify('got it')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port = 8081)
+    app.run(debug=True, host='0.0.0.0', port=8081)
